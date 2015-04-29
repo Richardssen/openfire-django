@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table border="1" style="border: 1px solid black;border-collapse: collapse;">
+<th>id</th><th>nickname</th>
+{% for i in data %}
+<tr>
+	<td>{{i.jid}}</td>
+	<td>{{i.nickname}}</td>
+
+</tr>
+
+{% endfor %}
+
+<h3>Add New Friend</h3>
+<form action='/viewfriends/{{username}}/' method='post'>{% csrf_token %}
+{{ form.as_p }}
+<input type='submit' value='Submit' />
+</form>
+</body>
+</html>

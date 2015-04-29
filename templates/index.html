@@ -5,6 +5,28 @@
 <title>Insert title here</title>
 </head>
 <body>
+{% if all_users %}
+<table border="1" style="border: 1px solid black;border-collapse: collapse;">
+<th>username</th><th>name</th><th>email</th>
+{% for i in all_users %}
+<tr>
+	<td>{{i.username}}</td>
+	<td>{{i.name}}</td>
+	<td>{{i.email}}</td>
+	<td><a href="edit/{{i.username}}/">edit</a></td>
+	<td><a href="delete/{{i.username}}/">delete</a></td>
+	<td><a href="lock/{{i.username}}/">lock</a></td>
+	<td><a href="unlock/{{i.username}}/">unlock</a></td>
+	<td><a href="viewfriends/{{i.username}}/">view friends</a></td>
+
+</tr>
+
+{% endfor %}
+</table>
+{% endif %}
+
+<hr>
+<a href='/create'>Create New User</a>
 
 </body>
 </html>
