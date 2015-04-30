@@ -145,7 +145,20 @@ class Openfire:
         xml='''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <rosterItem>
             <jid>%s@vspl011</jid>
-        </rosterItem>'''%frndname
+            <nickname>%s@vspl011</nickname>
+            <subscriptionType>3</subscriptionType>
+        </rosterItem>'''%(frndname,frndname)
         headers = {'Content-Type': 'application/xml'}
         r=requests.post(self.server+url,data=xml,headers=headers, auth=('admin', 'admin'))
+        if r.status_code==201:
+            url='/plugins/userService/users/%s/roster'%frndname
+            xml='''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+            <rosterItem>
+            <jid>%s@vspl011</jid>
+            <nickname>%s@vspl011</nickname>
+            <subscriptionType>3</subscriptionType>
+            </rosterItem>'''%(username,username)
+            headers = {'Content-Type': 'application/xml'}
+            r=requests.post(self.server+url,data=xml,headers=headers, auth=('admin', 'admin'))
+        print 'I am testing everything'
         
