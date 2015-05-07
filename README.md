@@ -31,3 +31,4 @@ url(r'^server/', include('openfireapp.urls')),
 6. Add templates to relative path.
 7. Run django project.
 
+Suggetions and contributions are most welcome.
