@@ -18,13 +18,17 @@ The configuration for user service plugin can be done in Openfire Admin console 
 3. Dowload and install openfire-django 
 4. Add following code to settings.py file ,
 
-```OPENFIRE_SERVER='http://vspl011:9090/'
+```
+OPENFIRE_SERVER='http://vspl011:9090/'
 ADMIN_USERNAME='admin'
-ADMIN_PASSWORD='admin'```
+ADMIN_PASSWORD='admin'
+```
 
 5. edit urls.py file and add following code to it,
 
-```url(r'^server/', include('openfireapp.urls')),```
+```
+url(r'^server/', include('openfireapp.urls')),
+```
 
 6. Add templates to relative path.
 7. Hit http://127.0.0.1/server
