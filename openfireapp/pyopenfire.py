@@ -5,7 +5,6 @@ Created on Apr 28, 2015
 '''
 from requests.auth import HTTPBasicAuth
 import requests
-from testapp import settings
 from lxml import etree
 
 

@@ -2,11 +2,14 @@
 from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, render
 from openfireapp.pyopenfire import Openfire
-from openfireapp.forms import EditUser,CreateNewUser,AddFriend
+from openfireapp.forms import EditUser, CreateNewUser, AddFriend
+from django.conf import settings
 
-SERVER_URL='http://nishant-vaio:9090'
-ADMIN_USER_NAME='admin'
-ADMIN_PASSWORD='nishant'
+
+ADMIN_USER_NAME=settings.ADMIN_USER_NAME
+SERVER_URL=settings.SERVER_URL
+ADMIN_PASSWORD=settings.ADMIN_PASSWORD
+
 def index(request):
     o=Openfire(ADMIN_USER_NAME,ADMIN_PASSWORD,SERVER_URL)
     all_users =  o.getAllusers()
