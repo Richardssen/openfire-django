@@ -12,23 +12,22 @@ The configuration for user service plugin can be done in Openfire Admin console 
 
 #Installation
 
-1. Create new django project.
-3. Dowload and install openfire-django 
-4. Add following code to settings.py file ,
+* Create new django project.
+* Dowload and install openfire-django 
+* Add following code to settings.py file ,
 
 ```
 OPENFIRE_SERVER='http://<server-domain>:9090/'
 ADMIN_USERNAME='admin'
 ADMIN_PASSWORD='admin'
 ```
-
-5. edit urls.py file and add following code to it,
+* edit urls.py file and add following code to it,
 
 ```
 url(r'^server/', include('openfireapp.urls')),
 ```
 
-6. Add templates to relative path.
-7. Run django project.
+* Add templates to relative path.
+* Run django project.
 
 Suggetions and contributions are most welcome.
